@@ -6,10 +6,10 @@
 
 void main(void){
     //変数用意
-    int m_0;    //大きい数値用
-    int n_0 = 1;    //小さい数値用
+    int m_0; 
+    int n_0;    
     int m_1;
-    int n_1 = 1;
+    int n_1;
     int lcm_1;
     int lcm_2;
     int lcm;
@@ -24,13 +24,12 @@ void main(void){
     int start_n = n_0;
 
     for (int i=0;;i++){
-        // printf("m_0(%d):%d\n",i,m_0);
-        // printf("n_0(%d):%d\n",i,n_0);
+        printf("m_0(%d):%d\n",i,m_0);
+        printf("n_0(%d):%d\n",i,n_0);
         if (n_0 == 0){
             printf("最大公約数は「%d」です。\n",n_1);
-
             lcm_1 = start_m / n_1;
-            lcm_2 = m_1 / n_1;
+            lcm_2 = start_n / n_1;
             lcm = lcm_1 * lcm_2 * n_1;
 
             printf("最小公倍数は「%d」です。",lcm);
@@ -38,7 +37,7 @@ void main(void){
         }
 
         n_1 = m_0 % n_0;     
-        // printf("n_1(%d):%d\n",i,n_1);
+        printf("n_1(%d):%d\n",i,n_1);
 
         if (m_0 == 0){
             printf("大きい数値が「0」のため終了します。");
@@ -58,9 +57,8 @@ void main(void){
         }else{
             m_1 = n_0;
             n_0 = m_1 % n_1;
-            // printf("n_0(%d):%d\n",i,n_0);
+            printf("n_0(%d):%d\n",i,n_0);
             m_0 = n_1;
-            printf("%d\n",m_1);
         }
     }
 }
